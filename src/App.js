@@ -35,7 +35,6 @@ export default function App() {
   useEffect(()=>{
     if(localStorage.getItem('userToken')!==null){
       saveUserData()
-
     }
   },[])
 
@@ -73,12 +72,12 @@ export default function App() {
 
 
   return<>
-    <ToastContainer  theme='colored'position="top-center"
+    <ToastContainer  theme='colored' position="bottom-left"
 autoClose={1000}/>
    <CartContextProvider>
-    {/* <Offline> <div className='network'>
+   <Offline> <div className='network'>
     You are offline Now (Check our Network!)
-      </div> </Offline> */}
+      </div> </Offline> 
 
   <RouterProvider router={routers}/>
   </CartContextProvider>

@@ -59,11 +59,14 @@ export default function Cart() {
         </Helmet>
        <div className="container">
     <div className="bg-main-light p-4 my-4">
-        <h3>Shop Cart</h3>
-        <h6 className='text-main'>Total Cart Price : {TotalPrice.totalCartPrice} EGP</h6>
+        
+        
 
         {Cart.length !==0? 
         <div className="container">
+            {Cart.length>0?<>
+                <h3>Shop Cart</h3>
+        <h6 className='text-main'>Total Cart Price : {TotalPrice.totalCartPrice} EGP</h6>
         {Cart?.map((item)=>{
             return <div key={item._id} className="row border-bottom my-2 ">
                 <div className="col-md-1 gy-2 pb-3">
@@ -93,9 +96,15 @@ export default function Cart() {
            CheckOut
         </button>
             </Link>
+
+            </>:<>
+            </>}
+          
         </div>
 
-:<Loading/>}
+:<>
+<h4 className='text-center'>There is nothing in Cart</h4>
+</>}
     </div>
     </div>
     </>
