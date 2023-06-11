@@ -50,6 +50,7 @@ export default function Products() {
                 <Link
                   className="text-decoration-none"
                   to={`/ProductDetails/${product._id}`}
+                
                 >
                   <img className="w-100" src={product.imageCover} alt="" />
                   <h3 className="h6 fw-bolder py-2">
@@ -72,7 +73,9 @@ export default function Products() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => addProduct(product._id)}
+                    onClick={() => {
+                      addProduct(product._id);
+                    }}
                     className="btn bg-main text-white w-100"
                   >
                     +Add
